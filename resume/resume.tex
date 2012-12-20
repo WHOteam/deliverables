@@ -1,0 +1,85 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2012 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper,sans]{moderncv}   
+% possible options include font size ('10pt', '11pt' and '12pt'), paper size
+% ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and
+% 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{classic}                        % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{black}                          % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}    % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+
+\graphicspath{{./extra/}}
+
+% personal data
+\firstname{Shannon}
+\familyname{Cebron}
+\address{110 W 39th St}{Baltimore, MD 21210}    % optional, remove the line if not wanted
+\mobile{+1~(425)~753~9566}                     % optional, remove the line if not wanted
+\email{scebron@cis.jhu.edu}                          % optional, remove the line if not wanted
+\homepage{wiki.cis.jhu.edu/scebron}                    % optional, remove the line if not wanted
+\photo[64pt][0.4pt]{linkedin.png}      
+% '64pt' is the height the picture must be resized to, 0.4pt is the thickness
+% of the frame around it (put it to 0pt for no frame) and 'picture' is the
+% name of the picture file; optional, remove the line if not wanted
+
+\quote{A watched pot never boils}                 % optional, remove the line if not wanted
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+\maketitle
+
+\section{Education}
+\cventry{2012--2013}{MSE}{The Johns Hopkins University}{Baltimore}{MD}{Applied Mathematics and Statistics}
+\cventry{2009--2012}{BS}{The Johns Hopkins University}{Baltimore, MD}{}{Applied Mathematics and Statistics (with honors)}  % arguments 3 to 6 can be left empty
+
+\section{Experience}
+\subsection{}
+\cventry{2011--present}{Research Assistant}{Center for Imaging Science}{Baltimore, MD}{}{
+\begin{itemize}%
+\item Assessing cortical thickness in diseased patients with various statistical models
+\item Documenting and generalizing reusable code to improve the analysis pipeline
+\end{itemize}
+}
+\cventry{2010--2010}{Marketing Analytics Intern}{FCS GROUP, Inc.}{San Francisco, CA}{}{
+\begin{itemize}%
+\item Designed probabalistic models to predict marketing success in various regions
+\item Rendered Visual Basic software to improve administrative efficiency:
+  \begin{itemize}%
+  \item New hours reporting system for the office
+  \item New office supplies ordering scheme
+  \end{itemize}
+\end{itemize}}
+
+
+\section{Languages}
+\cvitemwithcomment{English}{Fluent (native)}{}
+\cvitemwithcomment{Czech}{Fluent}{}
+\cvitemwithcomment{German}{Professional proficiency}{}
+\cvitemwithcomment{Slovenian}{Basic conversational proficiency}{}
+
+\section{Computer skills}
+\cvdoubleitem{Programming:}{Java, MATLAB, R, perl, bash shell, Haskell, HTML, Visual Basic, PHP, SAS}{Others:}{Microsoft Office, LENS, MRIStudio, Seg3D, ImageJ, Blox, MySQL, Linux OS, VMWare}
+
+\section{Interests}
+\cvitem{Hobby 1}{Bikram yoga}
+\cvitem{Hobby 2}{Skiing}
+
+%\section{Interests (Option 2)}
+%\cvlistitem{Item 1}
+%\cvlistitem{Item 2}
+
+\end{document}

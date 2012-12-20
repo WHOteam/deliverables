@@ -1,0 +1,179 @@
+\documentclass[oneside,12pt]{report}  
+
+% the dimensions of the page
+\textheight=9.25in \topmargin=-0.5in   %See note in Chapter 8 of Sample Report about "Page scaling" option in Adobe
+\textwidth=6.0in
+\oddsidemargin=0.3in
+\evensidemargin=0.3in  % Needed to balance even and odd pages in twoside print copy
+
+
+% Useful packages
+\usepackage{dtklogos}
+\usepackage{amsmath}
+\usepackage{bm}
+%\usepackage[colorlinks=true,pagebackref,linkcolor=blue]{hyperref}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{graphicx, subfigure}
+\usepackage{caption}
+\usepackage{excludeonly}
+
+\usepackage{graphicx} 
+
+%\usepackage{doc}
+%% Following sets up logic and formatting for conditional twoside copying
+%\usepackage{ifthen, color, fancyvrb}
+%\usepackage{nextpage}\pagestyle{plain}
+%\newcommand\myclearpage{\cleartooddpage
+%  [\thispagestyle{empty}]
+%  }
+
+\graphicspath{{./extra/}}
+
+\DeclareMathOperator*{\argmin}{arg\ min}
+\DeclareMathOperator*{\sign}{sign}
+
+% Note special alternative codes for using TWO bibliographies; see cautionary note in
+\DeclareGraphicsExtensions{ps,eps,PNG,png}
+
+% Theorem-like command definitions:
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{definition}{Definition}  % Note, this italicizes everything
+
+% Print the chapter and sections in the toc
+\setcounter{tocdepth}{1}
+
+% Specify which files to typeset for this run (note that overall pagination is preserved)
+%\includeonly{chapter1, chapter2}
+% Specify which files NOT to typeset for this run (note that overall pagination is preserved)
+%\excludeonly{}
+
+% Groundwork for allowing double-sided copying with blank versos
+\def\prefacesection#1{
+\chapter*{#1}
+\addcontentsline{toc}{chapter}{#1}
+}
+
+\begin{document}
+
+
+\def\thefootnote{\fnsymbol{footnote}}
+
+\thispagestyle{empty}
+
+% The numbers below controls the amount of space between the following sections
+\def\shiftdowna{0.32in}  % Adjust for balance
+\def\shiftdownb{0.22in}  % Adjust for balance
+
+% Set up the boiler plate at the top of the page
+
+\begin{center}
+\textbf{{\large Mathematical Modeling and Consulting }}\\
+
+\vspace \shiftdowna
+\includegraphics[width=0.5\textwidth]{jhu.png}\\
+
+% TITLE
+\vspace \shiftdowna
+\textbf{{\Large Peer Evaluation}}
+
+% STUDENTS
+\vspace{0.35in}
+\underline {Team Members}\\
+
+Michael Weinberger, \texttt{michael.lee.weinberger@gmail.com} \\
+\vspace{3pt}
+\text{Zhendan Zhu}, \texttt{zhendanzhu@hotmail.com} \\
+\vspace{3pt}
+\text{Shannon Cebron (document author)}, \texttt{scebron@cis.jhu.edu}
+
+% INSTRUCTOR
+\vspace \shiftdownb
+\underline {Academic Mentor} \\
+\vspace{5pt}
+\text{Dr.~N.~.H.~Lee}, Applied Mathematics and Statistics\\
+\texttt{nhlee@jhu.edu}
+
+% Consultants
+%\vspace \shiftdownb 
+%\underline {Consultant}\\
+%\vspace{5pt}
+%Jason Bourne\\
+
+% DATE
+\vspace \shiftdowna
+Date: Last Compiled on \today
+
+\end{center}
+
+\vfill  %Fill page to force following note to bottom
+\footnoterule
+\noindent \small{Disclaimer: This is a class project whose findings are endorsed by neither Johns Hopkins University nor the RAND Corporation.}
+
+% Begin ABSTRACT
+\ifthenelse{\boolean{@twoside}}{\myclearpage}{}
+\prefacesection{Abstract}
+
+The other two members of my group have been reviewed by me for their performance, and their performance will be described and evaluated in the following chapters.
+
+% Begin ACKNOWLEDGMENTS
+%\ifthenelse{\boolean{@twoside}}{\myclearpage}{}
+%\prefacesection{Acknowledgments}
+
+% Table of contents, List of Figures, and List of Tables.
+\ifthenelse{\boolean{@twoside}}{\myclearpage}{}
+\tableofcontents
+
+
+%\ifthenelse{\boolean{@twoside}}{\myclearpage}{}
+%\listoftables
+
+
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\setcounter{footnote}{0}
+
+\ifthenelse{\boolean{@twoside}}{\myclearpage}{}
+%\include{A_Introduction}
+%\include{B_TechnicalBackground}
+%\include{C_ProblemStatement}
+%\include{D_Analysis}
+%\include{E_Results}
+%\include{F_Conclusion}
+
+%\include{chapter1}
+%\include{chapter2}
+%\include{chapter3}
+%\include{chapter4}
+%\include{chapter5}
+%\include{chapter6}
+
+\chapter{Michael Weinberger}
+
+Michael Weinberger is an extremely effective communicator with a hardworking attitude and a good sense of humor. Working with Michael was a pleasure. He was flexible about scheduling, was receptive to others' ideas but also full of new ones, and made a valuable technical contribution to the project via his skills with Python. Without Michael, this project would not have been possible. If I were to rate Michael's efficacy as a team member $x$, I would rate it:
+\\
+\begin{math}
+x = \frac{10}{10}
+\end{math}
+
+\chapter{Zhendan Zhu}
+
+Zhendan Zhu is an incredibly friendly and optimistic person. Working with Zhendan was a pleasure. He always made sure that we were attentive to detail and met all submission requirements. His emphasis on doing our best work possible was a great asset to the group. Without his technical contribution via his expertise with regression modeling in R, the project would not have been possible. If I were to rate Zhendan's efficacy as a team member $x$, I would rate it:
+\\
+\begin{math}
+x = \frac{10}{10}
+\end{math}
+
+
+\ifthenelse{\boolean{@twoside}}{\myclearpage}{}
+
+% Bibliography must come last.
+\bibliographystyle{plain}
+\renewcommand\bibname{Selected Bibliography Including Cited Works}
+\nocite{*}  % List ALL references in your references, not just the ones cited in the text.
+% This scheme automatically alphabetizes the Bibliography.
+\bibliography{Biblio}
+\end{document}

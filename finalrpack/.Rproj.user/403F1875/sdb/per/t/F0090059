@@ -1,0 +1,15 @@
+{
+    "contents" : "\\name{obesity_update}\n\\alias{obesity_update}\n\\docType{data}\n\\title{\nObesity-related data for 190 countries\n}\n\\description{\nThis dataset contains data on 13 variables (including obesity rate) for 190 countries of the world. It does not include data for any territories or non-sovereign entities. A few world countries are missing because obesity data was not available.\n}\n\\usage{data(obesity_update)}\n\\format{\n  A data frame with 190 observations on the following 13 variables.\n  \\describe{\n    \\item{\\code{obrate}}{The percentage of adults, 18 and over, who have a BMI above 30}\n    \\item{\\code{birth_fertility}}{The birth rate (number of births per 1000 people) multiplied by the fertility rate (number of children per woman)}\n    \\item{\\code{population}}{The country's population}\n    \\item{\\code{ppgdp}}{The GDP in USD per capita}\n    \\item{\\code{pop_growth}}{The population growth rate}\n    \\item{\\code{ppimports}}{The imports in USD per capita}\n    \\item{\\code{USborderpath}}{The shortest path to the United States based on borders weighted by border lengths}\n    \\item{\\code{USimportpath}}{The shortest path to the United States based on major import partnerships weighted by imports percentages}\n    \\item{\\code{import_diff}}{The average absolute difference in obesity rate between a country and its import partners}\n    \\item{\\code{export_diff}}{The average absolute difference in obesity rate between a country and its export partners}\n    \\item{\\code{borders}}{The number of bordering countries}\n    \\item{\\code{border_diff}}{The average absolute difference in obesity rate between a country and its geographical neighbours}\n    \\item{\\code{border_avg}}{The average obesity rate of a country's neighbours}\n  }\n}\n\\source{\nCIA World Factbook\nWHO Health Database\n}\n\\examples{\ndata(obesity_update)\ncolMeans(obesity_update)\nlm(obrate~.,data=obesity_update)\n}\n\\keyword{datasets}\n",
+    "created" : 1355968849939.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2535231263",
+    "id" : "F0090059",
+    "lastKnownWriteTime" : 1355968882,
+    "path" : "C:/Users/Shanbogen/Downloads/obesity_predict/man/obesity_update.Rd",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_doc"
+}

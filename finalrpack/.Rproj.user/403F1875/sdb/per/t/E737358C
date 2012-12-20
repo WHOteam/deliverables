@@ -1,0 +1,15 @@
+{
+    "contents" : "fit_stepwise <- function()\n{\n  data(obesity_update)\n  obesity_update<-transform(obesity_update,logimports=log(obesity_update$ppimports),loggdp=log(obesity_update$ppgdp),logimportpath=log(log((obesity_update$USimportpath))))\n  obesity_update <- obesity_update[,c(-4,-6,-8)]\n  \n  require(MASS)\n  library(MASS)\n  fit <- lm(obrate~.,data=obesity_update)\n  step <- stepAIC(fit, direction=\"both\")\n  step$anova # display results\n  \n  #final model - with graph-theoretic varialbes\n  model <- lm(obrate~birth_fertility+population+USborderpath+import_diff+export_diff+borders+loggdp,data=obesity_update)\n  \n  #create stepwise model without them\n  \n  model_w <- lm(obrate~birth_fertility+population+pop_growth+logimports+loggdp,data=obesity_update)\n  \n  #test difference with anova\n  anova(model,model_w)\n  \n}",
+    "created" : 1355969070137.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2472858977",
+    "id" : "E737358C",
+    "lastKnownWriteTime" : 1355969132,
+    "path" : "C:/Users/Shanbogen/Downloads/obesity_predict/R/fit_stepwise.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
